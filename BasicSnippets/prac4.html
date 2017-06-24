@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<script src="angular1.min.js"></script>
+<body>
+
+<p>Try to change the names.</p>
+
+<div ng-app="myApp1" ng-controller="myCtrl">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<div ng-app="myApp2" ng-controller="myCtrl2">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+var app1 = angular.module('myApp1', []);
+var app2 = angular.module('myApp2', []);
+app1.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
+});
+app2.controller('myCtrl2', function($scope) {
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
+});
+</script>
+
+</body>
+</html>
